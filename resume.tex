@@ -1,0 +1,317 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{scrextend}
+\usepackage{tikz}
+
+\frenchspacing 
+
+\geometry{
+  letterpaper,
+  left = 0.5in,
+  right = 0.5in,
+  top = 0.6in,
+  bottom = 0.6in
+}
+
+\hypersetup{
+  colorlinks = true, 
+  linkcolor = blue, 
+  urlcolor  = blue,
+  citecolor = blue, 
+  anchorcolor = blue
+}
+
+%   CUSTOM STYLES  %
+\thispagestyle{empty} % remove page number
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+%   MACROS  %
+
+\newcommand{\sectionStart}{
+  \begin{itemize}[label={},leftmargin=0in]
+}
+\newcommand{\sectionEnd}{
+  \end{itemize}
+}
+\newcommand{\head}[8]{
+  \noindent
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \centerline{
+      \textbf{{\color{black}{\LARGE {\underline{#1}}}}}
+    }
+    \vspace{5pt}\\
+    \centerline{
+      \href{mailto:#2}{\underline{#2}} $\mid$
+      #3 $\mid$
+      #4 : \href{#5}{\underline{#6}} $\mid$
+      #7 : \href{#8}{\underline{#6}}
+    }
+  \end{tabular*}
+  \vspace{-10pt}
+}
+\newcommand{\summaryText}[1]{
+  \item
+  \begin{addmargin}[7pt]{0pt}
+    {#1}
+  \end{addmargin}
+}
+\newcommand{\educationItem}[5]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    {#1 in \textbf{#2}}  & {#3}\\
+    {\textit{#4}} & {#5}\\\vspace{-18pt}
+  \end{tabular*}
+  \vspace{-5pt}
+}
+\newcommand{\skillItem}[2]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{}l@{}}
+    {\textbf{#1}: } & {#2}
+  \end{tabular*}\vspace{-17pt}
+}
+\newcommand{\jobHeading}[3]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    \normalsize{\textbf{#1}} & #2 \\
+    \textit{\small#3} \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\projectHeading}[4]{
+  \vspace{-1pt}
+  \item
+  \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r@{}}
+    \normalsize{{\href{#1}{#2}} \textbf{#3}} & #4 \\
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\listStart}{\begin{itemize}}
+\newcommand{\listEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\bulletItem}[1]{
+  \item
+  \small{
+    {#1 \vspace{-1.8pt}}
+  }
+}
+\newcommand{\udot}[1]{%
+    \tikz[baseline=(todotted.base)]{
+        \node[inner sep=0pt,outer sep=5pt] (todotted) {#1};
+        \draw[dotted] (todotted.south west) -- ([xshift=10pt]todotted.south east);
+    }%
+}%
+
+\newcommand{\declarationText}[1]{
+  \item
+  \begin{addmargin}[7pt]{0pt}
+    {#1}
+  \end{addmargin}
+}
+
+\begin{document}
+
+%   HERO   %
+\head
+  {Raunak Jalan}
+  {ronakjalan98@gmail.com}
+  {+91-7984590915}
+  {Github}
+  {https://github.com/RaunakJalan}
+  {RaunakJalan}
+  {LinkedIn}
+  {https://www.linkedin.com/in/raunak-jalan-dev/}
+
+%   SUMMARY   %
+\section{Summary}
+\sectionStart
+  \summaryText
+  {Computer Science student with experience in developing web applications, machine learning models, desktop applications, automation bots using technologies such as Python, JavaScript (ES6), Shell Script and MongoDB. Seeking a \textbf{Software Developer Job} to leverage exemplary coding skills, analytical skills and leadership skills.}
+\sectionEnd
+
+%   EDUCATION   %
+\section{Education}
+\sectionStart
+  \educationItem
+    {Bachelor of Engineering} 
+    {Computer Science} 
+    {Expected June 2021}
+    {Chandigarh University [Gharuan, Punjab]} 
+    {8.68/10.0}
+\sectionEnd
+
+%   SKILLS   %
+\section{Technical Skills}
+\sectionStart
+  \skillItem
+    {Languages}
+    {Python, C, C++, Java, Bash Scripting,HTML, CSS,  JavaScript}
+  \skillItem
+    {Frameworks}
+    {Bootstrap, Flask, Selenium}
+  \skillItem
+    {Libraries}
+    {Tkinter, OpenCV, Tensorflow, Keras, Scikit-Learn, Matplotlib}
+  \skillItem
+    {Tools}
+    {Netbeans, Google Colab, Jupyter Notebook, Tableau, Bash, Git, \LaTeX\ }
+  \skillItem
+    {Databases}
+    {IBM DB2, MySQL, MongoDB}
+  \skillItem
+    {Operating System}
+    {Windows, Linux}
+  \skillItem
+    {Familiar with}
+    {Flutter Development, Oracle SQL, REST APIs}
+  \vspace{3pt}
+\sectionEnd
+
+%   PROJECTS   %
+\section{Projects}
+\sectionStart
+  \projectHeading
+    {https://github.com/RaunakJalan/LinkedIn_Automation}
+    {LinkedIn Automation}
+    {(Python, Selenium)}
+    {March 2021 - Present}
+  \listStart
+    \bulletItem
+      {In this project, a complete set of tasks are being automated for LinkedIn, from posting to profile scraping.}
+  \listEnd  
+  \projectHeading
+    {https://rj-imagescrapper.herokuapp.com/}
+    {Google Image Scraper}
+    {(Python, Flask, Selenium, BeautifulSoup4)}
+    {January 2021}
+  \listStart
+    \bulletItem
+      {In this project, a flask application was created where, one can enter search keyword and number of images and application will scrape Google Images to get number of images for that input. A POST API is also created for this. It was then deployed on Heroku.}
+    \bulletItem
+      {Github: https://github.com/RaunakJalan/imageScrapper}
+	\bulletItem
+      {API: https://rj-imagescrapper.herokuapp.com/api/showImages}
+  \listEnd
+  \projectHeading
+    {https://github.com/RaunakJalan/TensorFlow-Deployment-Course-Coursera/tree/master/Browser_Based_Model/Week_4/Rock_paper_scissor}
+    {Rock Paper Scissor recognition using TensorflowJS}
+    {(HTML, JavaScript, TensorflowJS)}
+    {May 2020}
+  \listStart
+    \bulletItem
+      {In this project, a complete set of data was recorded using a browser based model. And trained using TensorflowJS. Then it was predicted on browser.}
+	\bulletItem
+	  {Learned the basic and advanced concepts of TensorFlowJS.}
+  \listEnd  
+  \projectHeading
+    {https://github.com/RaunakJalan/Virtual-Keyboard-OpenCV}
+    {AR Virtual Keyboard}
+    {(Python, OpenCV, Tkinter, PyAutoGUI)}
+    {May 2019}
+  \listStart
+    \bulletItem
+      {In this project, I used OpenCV library of Python to create a representation of a keyboard and track pad on screen and one can use the keyboard using camera and yellow color covered finger.}
+    \bulletItem
+      {Successfully learned to use Color Segmentation.}
+  \listEnd
+  \projectHeading
+    {https://github.com/RaunakJalan/Credit-Card-Number-Identification}
+    {Credit Card Digit Recognition}
+    {(Python, OpenCV, TensorFlow)}
+    {December 2018}
+  \listStart
+    \bulletItem
+      {In this project, I used Computer Vision and CNN to create a model that successfully recognizes digits on a credit card. Complete data set was random and build by me using data augmentation.}
+    \bulletItem
+      {Learned how to create a data set.}
+  \listEnd
+  \projectHeading
+    {https://rj-language-classification.herokuapp.com/}
+    {Language Classification with Naive Bayes}
+    {(Python, Scikit-Learn, Flask)}
+    {October 2018}
+  \listStart
+    \bulletItem
+      {In this project, with modification to various hyperparameters of Naive Bayes Algorithm a classification between Czech, English and Slovakian Language was made.}
+	\bulletItem
+	  {Learned the importance of Hyper Parameter alpha in Naive Bayes Algorithm.}
+	\bulletItem
+      {Github: https://github.com/RaunakJalan/Language-Classification-Naive-Bayes}
+  \listEnd
+\sectionEnd
+  
+%   EXPERIENCE   %
+\section{Experience}
+\sectionStart
+  \jobHeading
+    {SDET Intern}
+    {October 2020 - Present}
+    {Commvault Systems, India}
+  \listStart
+    \bulletItem
+    {Automated multiple test cases for Command Center data agent IBM DB2.}
+    \bulletItem
+    {Achieved exposure towards \textbf{Commvault's} software architecture and its working.}
+	\bulletItem
+	{Achieved exposure towards \textbf{IBM DB2} database and its multiple configurations.}
+	\bulletItem
+	{Worked under an experienced SDET Engineer and got deep insights related to readability and optimization of code.}
+  \listEnd
+\sectionEnd
+
+%   Certifications   %
+\section{Certifications}
+\sectionStart
+    \bulletItem
+    {\href{}{1. Completed Summer training in Machine Learning with A+ grade at Techienest}}
+    \bulletItem
+    {\href{https://coursera.org/share/692f14a73ae3b7188a460f07e6e58357}{2. Front End Web Development Specialization:Coursera}}
+    \bulletItem
+    {\href{https://coursera.org/share/3cb5be0a160a50819fb8c691a1e2bae2}{3. Deployment of ML models: Browser Based, Data Pipelines, Tensorflow Lite, Advance Deployment: Coursera}}
+    \bulletItem
+    {\href{https://www.udemy.com/certificate/UC-I146N8JD/}{4. Computer Vision with OpenCV Library using Python}}
+    \bulletItem
+    {\href{https://coursera.org/share/4a9d6e1dbc620cbbd834d4cc71a30985}{5. Google IT Automation with Python: Coursera}}
+    \bulletItem
+    {\href{https://drive.google.com/file/d/1faX-SPZJerRXQ-yNHDiWGLdW4N3rT11p/view?usp=sharing}{6. Cisco Linux Unhatched Certification}}
+\sectionEnd
+
+
+%   Awards   %
+\section{Awards}
+\sectionStart
+  
+    \bulletItem
+    {\udot{3rd position Bug Finding Competition.}\qquad\qquad\qquad\qquad\udot{Technical Treasure Hunt Winner.}}
+    \bulletItem
+    {\ Techno Savvy Award in XII.\qquad\qquad\qquad\qquad\qquad\qquad\qquad\quad State Level IT quiz winner in XI.}
+  
+\sectionEnd
+
+%   ExtraCurricular   %
+\section{Extra Curricular Activities}
+\sectionStart
+  
+    \bulletItem
+    {1. Participated in TechFest Treasure Hunt.}
+    \bulletItem
+    {2. Created Posters for TechFest.}
+    \bulletItem
+    {3. Created Desktop App for TechFest Treasure Hunt.}
+  
+\sectionEnd
+
+%   Declaration   %
+\section{Declaration}
+\sectionStart
+  \declarationText
+    {I do hereby declare that above information is true to best of my knowledge.}
+  
+\sectionEnd
+
+\end{document}
